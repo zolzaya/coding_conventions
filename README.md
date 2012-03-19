@@ -5,9 +5,9 @@
 эх хэл рүүгээ орчуулан, ашиглах, түгээн дэлгэрүүлэх зорилгоор энэ төслийг үүсгэлээ.
 
 ## Програмчлалын хэлний код бичих зөвлөмжүүд
-* [Ruby](https://github.com/zolzaya/coding_conventions/blob/master/ruby/ruby.md)
+* [Ruby](https://github.com/zolzaya/coding_conventions/blob/master/ruby/ruby.md) ([zolzaya](https://github.com/zolzaya))
 * Python
-  - [PEP-8](https://github.com/python-mongolia/py-mn/blob/master/peps/pep-0008.rst)
+  - [PEP-8](https://github.com/python-mongolia/py-mn/blob/master/peps/pep-0008.rst) ([dolugen](https://github.com/dolugen))
 * [Java](http://www.oracle.com/technetwork/java/javase/documentation/codeconvtoc-136057.html)
 
 ## Технологи болон фрэймворкуудын код бичих зөвлөмжүүд
