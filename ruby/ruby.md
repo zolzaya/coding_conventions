@@ -11,15 +11,15 @@ Ruby хэлний код бичих зөвлөмж
 > -- Jerry Coffin (on indentation)
 
 * Use `UTF-8` as the source file encoding.
-* Use two **spaces** per indentation level.
+* Догол мөр бүрт 2 хоосон зай ашиглах
 
     ```Ruby
-    # good
+    # зөв
     def some_method
       do_something
     end
 
-    # bad - four spaces
+    # буруу - 4 хоосон зай
     def some_method
         do_something
     end
@@ -427,7 +427,7 @@ Ruby хэлний код бичих зөвлөмж
 
     # bad
     if v = array.grep(/foo/) ...
-    
+
     # also good - shows intended use of assignment and has correct precedence.
     if (v = self.next_value) == "hello" ...
     ```
@@ -654,8 +654,8 @@ mutators.
         @last_name = last_name
       end
     end
-    ```  
-  
+    ```
+
 * Consider adding factory methods to provide additional sensible ways
 to create instances of a particular class.
 
@@ -787,7 +787,7 @@ in *Ruby* now, not in *Python*.
       # the rescue clause does absolutely nothing
     end
     ```
-  
+
 * Don't use exceptions for flow of control.
 
     ```Ruby
@@ -804,11 +804,11 @@ in *Ruby* now, not in *Python*.
     else
       n / d
     ```
-  
+
 * Avoid rescuing the `Exception` class.
 
     ```Ruby
-    # bad 
+    # bad
     begin
       # an exception occurs here
     rescue
@@ -844,7 +844,7 @@ in *Ruby* now, not in *Python*.
     rescue Exception => e
       # some handling
     end
-    ```  
+    ```
 
 * Release external resources obtained by your program in an ensure
 block.
@@ -859,7 +859,7 @@ block.
       f.close unless f.nil?
     end
     ```
-  
+
 * Favor the use of exceptions for the standard library over
 introducing new exception classes.
 
@@ -886,7 +886,7 @@ strings.
 * Use `Set` instead of `Array` when dealing with unique elements. `Set`
   implements a collection of unordered values with no duplicates. This
   is a hybrid of `Array`'s intuitive inter-operation facilities and
-  `Hash`'s fast lookup. 
+  `Hash`'s fast lookup.
 * Use symbols instead of strings as hash keys.
 
     ```Ruby
