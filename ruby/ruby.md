@@ -3,7 +3,7 @@ Ruby хэлний код бичих зөвлөмж
 Эх сурвалж: [ruby-style-guide](https://github.com/bbatsov/ruby-style-guide)
 
 
-## Source Code Layout
+## Эх код
 
 > Nearly everybody is convinced that every style but their own is
 > ugly and unreadable. Leave out the "but their own" and they're
@@ -33,10 +33,7 @@ Ruby хэлний код бичих зөвлөмж
 
         ```$ git config --global core.autocrlf true```
 
-* Use spaces around operators, after commas, colons and semicolons, around `{`
-  and before `}`. Whitespace might be (mostly) irrelevant to the Ruby
-  interpreter, but its proper use is the key to writing easily
-  readable code.
+* Операторууд, '{', '}' хаалтнуудын өмнө болон ард, таслал, тодорхойлох цэг, цэгтэй таслалын ард хоосон зай ав. Хоосон зайг зөв ашигласнаар кодыг илүү ойлгомжтой харагдуулдаг.
 
     ```Ruby
     sum = 1 + 2
@@ -45,17 +42,17 @@ Ruby хэлний код бичих зөвлөмж
     [1, 2, 3].each { |e| puts e }
     ```
 
-    The only exception is when using the exponent operator:
+    Дээрх зөвлөмжтэй зөрчилдсөн ганц тохиолдол нь зэрэг дэвшүүлэх үйлдэл дээр хоосон зай ашиглаж болохгүй:
 
     ```Ruby
-    # bad
+    # буруу
     e = M * c ** 2
 
-    # good
+    # зөв
     e = M * c**2
     ```
 
-* No spaces after `(`, `[` or before `]`, `)`.
+* `(`, `[` нээх хаалтуудын ард, `]`, `)` хаах хаалтуудын өмнө хоосон зай хэрэггүй
 
     ```Ruby
     some(arg).other
@@ -88,8 +85,7 @@ Ruby хэлний код бичих зөвлөмж
            end
     ```
 
-* Use empty lines between `def`s and to break up a method into logical
-  paragraphs.
+* Функциуд болон чухал кодуудын хооронд хоосон мөр авна.
 
     ```Ruby
     def some_method
@@ -145,7 +141,7 @@ Ruby хэлний код бичих зөвлөмж
 * Keep lines fewer than 80 characters.
 * Avoid trailing whitespace.
 
-## Syntax
+## Бичиглэл
 
 * Use `def` with parentheses when there are arguments. Omit the
   parentheses when the method doesn't accept any arguments.
@@ -169,24 +165,24 @@ Ruby хэлний код бичих зөвлөмж
     ```Ruby
     arr = [1, 2, 3]
 
-    # bad
+    # буруу
     for elem in arr do
       puts elem
     end
 
-    # good
+    # зөв
     arr.each { |elem| puts elem }
     ```
 
-* Never use `then` for multi-line `if/unless`.
+* Never use `then` for multi-line `if/unless` нөхцөлүүдэд 'then' түлхүүр үгийг ашиглаж болохгүй
 
     ```Ruby
-    # bad
+    # буруу
     if some_condition then
       # body omitted
     end
 
-    # good
+    # зөв
     if some_condition
       # body omitted
     end
@@ -504,7 +500,7 @@ syntax.
     result = hash.map { |_, v| v + 1 }
     ```
 
-## Naming
+## Нэршил
 
 > The only real difficulties in programming are cache invalidation and
 > naming things. <br/>
@@ -537,7 +533,7 @@ syntax.
   reason the use of `select` is encouraged over `find_all` is that it
   goes together nicely with `reject` and its name is pretty self-explanatory.
 
-## Comments
+## Тайлбар
 
 > Good code is its own best documentation. As you're about to add a
 > comment, ask yourself, "How can I improve the code so that this
@@ -560,7 +556,7 @@ syntax.
 * Avoid writing comments to explain bad code. Refactor the code to
   make it self-explanatory. (Do or do not - there is no try.)
 
-## Annotations
+## Тэмдэглэгээ
 
 * Annotations should usually be written on the line immediately above
   the relevant code.
@@ -600,7 +596,7 @@ syntax.
 * Use other custom annotation keywords if it feels appropriate, but be
   sure to document them in your project's `README` or similar.
 
-## Classes
+## Класс
 
 * When designing class hierarchies make sure that they conform to the
   [Liskov Substitution Principle](http://en.wikipedia.org/wiki/Liskov_substitution_principle).
@@ -912,7 +908,7 @@ syntax.
 * Rely on the fact that hashes in 1.9 are ordered.
 * Never modify a collection while traversing it.
 
-## Strings
+## Тэмдэгт мөр
 
 * Prefer string interpolation instead of string concatenation:
 
@@ -973,7 +969,7 @@ syntax.
     end
     ```
 
-## Regular Expressions
+## Энгийн илэрхийлэл
 
 * Don't use regular expressions if you just need plain text search in string:
   `string['text']`
@@ -1036,7 +1032,7 @@ syntax.
 
 ## Percent Literals
 
-* Use `%w` freely.
+* `%w` тэмдэглэгээг сайн ашигла
 
     ```Ruby
     STATES = %w(draft open closed)
