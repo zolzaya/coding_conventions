@@ -141,16 +141,15 @@ Ruby хэлний код бичих зөвлөмж
 
 ## Бичиглэл
 
-* Use `def` with parentheses when there are arguments. Omit the
-  parentheses when the method doesn't accept any arguments.
+* Хэрэв функц чинь аргументтэй бол хаалт ашигла, үгүй бол хаалт битгий ашигла
 
      ```Ruby
      def some_method
-       # body omitted
+       # код
      end
 
      def some_method_with_arguments(arg1, arg2)
-       # body omitted
+       # код
      end
      ```
 
