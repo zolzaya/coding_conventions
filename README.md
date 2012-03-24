@@ -7,7 +7,7 @@
 ## Програмчлалын хэлний код бичих зөвлөмжүүд
 * [Ruby](https://github.com/zolzaya/coding_conventions/blob/master/ruby/ruby.md) ([zolzaya](https://github.com/zolzaya))
 * Python
-  - [PEP-8](https://github.com/python-mongolia/py-mn/blob/master/peps/pep-0008.rst) ([dolugen](https://github.com/dolugen))
+  - [PEP-8](https://github.com/python-mongolia/py-mn/blob/master/peps/pep-0008.rst) ([dolugen](https://github.com/dolugen), [dulmandakh](https://github.com/dulmandakh))
 * [Java](https://github.com/zolzaya/coding_conventions/blob/master/java/java.md)
 * [JavaScript](https://github.com/zolzaya/coding_conventions/blob/master/javascript/javascript.md)
 * [CoffeeScript](https://github.com/zolzaya/coding_conventions/blob/master/javascript/coffeescript.md)
