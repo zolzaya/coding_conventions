@@ -171,17 +171,17 @@ Ruby хэлний код бичих зөвлөмж
     arr.each { |elem| puts elem }
     ```
 
-* Олон мөрүүдээс тогтож байгаа `if/unless` нөхцөлүүдийн ард `then` түлхүүр үгийг ашиглаж болохгүй
+* Олон мөрүүдээс тогтож байгаа `if/unless` нөхцөлүүдийн ард `then` түлхүүр үгийг битгий ашигла
 
     ```Ruby
     # буруу
     if some_condition then
-      # body omitted
+      # код
     end
 
     # зөв
     if some_condition
-      # body omitted
+      # код
     end
     ```
 
