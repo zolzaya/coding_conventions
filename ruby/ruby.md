@@ -171,7 +171,7 @@ Ruby хэлний код бичих зөвлөмж
     arr.each { |elem| puts elem }
     ```
 
-* Never use `then` for multi-line `if/unless` нөхцөлүүдэд 'then' түлхүүр үгийг ашиглаж болохгүй
+* `if/unless` нөхцөлүүдэд `then` түлхүүр үгийг ашиглаж болохгүй
 
     ```Ruby
     # буруу
