@@ -59,9 +59,7 @@ Ruby хэлний код бичих зөвлөмж
     [1, 2, 3].length
     ```
 
-* Indent `when` as deep as `case`. I know that many would disagree
-  with this one, but it's the style established in both the "The Ruby
-  Programming Language" and "Programming Ruby".
+* `case` болон `when`-ий хооронд догол мөр ав.
 
     ```Ruby
     case
@@ -127,7 +125,7 @@ Ruby хэлний код бичих зөвлөмж
           body: source.text)
     end
 
-    # зөв (догол мөр нь функц дуудалттай тэнцүү)
+    # зөв (догол мөр нь функц дуудалттай зэрэгцээ)
     def send_mail(source)
       Mailer.deliver(to: 'bob@example.com',
                      from: 'us@example.com',
@@ -137,7 +135,7 @@ Ruby хэлний код бичих зөвлөмж
     ```
 
 * API-н баримт бичгэнд RDoc-н зөвлөмжүүдийг ашигла. Функц болон түүний тайлбарын хооронд хоосон мөр битгий ав.
-* Keep lines fewer than 80 characters.
+* Мөрөнд хамгийн ихдээ 80-н тэмдэгтийг багтаа.
 * Avoid trailing whitespace.
 
 ## Бичиглэл
