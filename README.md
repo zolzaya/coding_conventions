@@ -11,7 +11,7 @@
 * [Java](https://github.com/zolzaya/coding_conventions/blob/master/java/java.md)
 * [JavaScript](https://github.com/zolzaya/coding_conventions/blob/master/javascript/javascript.md)
 * [CoffeeScript](https://github.com/zolzaya/coding_conventions/blob/master/javascript/coffeescript.md)
-* PHP
+* PHP ([orgil](https://github.com/openworkshop), [khaschuluu](https://github.com/khaschuluu))
 * C
 
 ## Технологи болон фрэймворкуудын код бичих зөвлөмжүүд
