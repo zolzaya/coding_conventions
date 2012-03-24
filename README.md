@@ -9,6 +9,8 @@
 * Python
   - [PEP-8](https://github.com/python-mongolia/py-mn/blob/master/peps/pep-0008.rst) ([dolugen](https://github.com/dolugen))
 * [Java](http://www.oracle.com/technetwork/java/javase/documentation/codeconvtoc-136057.html)
+* [JavaScript](https://github.com/zolzaya/coding_conventions/blob/master/javascript/javascript.md)
+* [CoffeeScript](https://github.com/zolzaya/coding_conventions/blob/master/javascript/coffeescript.md)
 
 ## Технологи болон фрэймворкуудын код бичих зөвлөмжүүд
 * [Ruby on Rails](https://github.com/bbatsov/rails-style-guide)
