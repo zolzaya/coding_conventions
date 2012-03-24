@@ -101,15 +101,15 @@ Ruby хэлний код бичих зөвлөмж
     end
     ```
 
-* Align the parameters of a method call if they span over multiple lines.
+* Функц руу дамжуулж байгаа параметрууд нь хэт их бол параметруудыг догол мөрүүдэд хувааж, функцын дуудалттай зэрэгцүүлнэ.
 
     ```Ruby
-    # starting point (line is too long)
+    # буруу (мөр нь хэт урт байна)
     def send_mail(source)
       Mailer.deliver(to: 'bob@example.com', from: 'us@example.com', subject: 'Important message', body: source.text)
     end
 
-    # bad (normal indent)
+    # буруу (1 догол мөртэй)
     def send_mail(source)
       Mailer.deliver(
         to: 'bob@example.com',
@@ -118,7 +118,7 @@ Ruby хэлний код бичих зөвлөмж
         body: source.text)
     end
 
-    # bad (double indent)
+    # буруу (2 догол мөртэй)
     def send_mail(source)
       Mailer.deliver(
           to: 'bob@example.com',
@@ -127,7 +127,7 @@ Ruby хэлний код бичих зөвлөмж
           body: source.text)
     end
 
-    # good
+    # зөв (догол мөр нь функц дуудалттай тэнцүү)
     def send_mail(source)
       Mailer.deliver(to: 'bob@example.com',
                      from: 'us@example.com',
@@ -136,8 +136,7 @@ Ruby хэлний код бичих зөвлөмж
     end
     ```
 
-* Use RDoc and its conventions for API documentation.  Don't put an
-  empty line between the comment block and the `def`.
+* API-н баримт бичгэнд RDoc-н зөвлөмжүүдийг ашигла. Функц болон түүний тайлбарын хооронд хоосон мөр битгий ав.
 * Keep lines fewer than 80 characters.
 * Avoid trailing whitespace.
 
