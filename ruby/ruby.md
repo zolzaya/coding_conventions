@@ -184,14 +184,13 @@ Ruby хэлний код бичих зөвлөмж
     end
     ```
 
-* Favor the ternary operator(`?:`) over `if/then/else/end` constructs.
-  It's more common and obviously more concise.
+* `if/then/else/end` нөхцөлийн (`?:`) оронд гурвалсан нөхцөл ашигла.
 
     ```Ruby
-    # bad
+    # буруу
     result = if some_condition then something else something_else end
 
-    # good
+    # зөв
     result = some_condition ? something : something_else
     ```
 
