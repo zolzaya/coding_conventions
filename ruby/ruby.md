@@ -14,12 +14,12 @@ Ruby хэлний код бичих зөвлөмж
 * Догол мөр бүрт 2 хоосон зай авах
 
     ```Ruby
-    # зөв
+    # сайн
     def some_method
       do_something
     end
 
-    # буруу - 4 хоосон зай
+    # муу - 4 хоосон зай
     def some_method
         do_something
     end
@@ -45,10 +45,10 @@ Ruby хэлний код бичих зөвлөмж
     Дээрх зөвлөмжтэй зөрчилдсөн ганц тохиолдол нь зэрэг дэвшүүлэх үйлдэл дээр хоосон зай ашиглаж болохгүй:
 
     ```Ruby
-    # буруу
+    # муу
     e = M * c ** 2
 
-    # зөв
+    # сайн
     e = M * c**2
     ```
 
@@ -102,12 +102,12 @@ Ruby хэлний код бичих зөвлөмж
 * Функц руу дамжуулж байгаа параметрууд нь хэт их бол параметруудыг догол мөрүүдэд хувааж, функцын дуудалттай зэрэгцүүлнэ.
 
     ```Ruby
-    # буруу (мөр нь хэт урт байна)
+    # муу (мөр нь хэт урт байна)
     def send_mail(source)
       Mailer.deliver(to: 'bob@example.com', from: 'us@example.com', subject: 'Important message', body: source.text)
     end
 
-    # буруу (1 догол мөртэй)
+    # муу (1 догол мөртэй)
     def send_mail(source)
       Mailer.deliver(
         to: 'bob@example.com',
@@ -116,7 +116,7 @@ Ruby хэлний код бичих зөвлөмж
         body: source.text)
     end
 
-    # буруу (2 догол мөртэй)
+    # муу (2 догол мөртэй)
     def send_mail(source)
       Mailer.deliver(
           to: 'bob@example.com',
@@ -125,7 +125,7 @@ Ruby хэлний код бичих зөвлөмж
           body: source.text)
     end
 
-    # зөв (догол мөр нь функц дуудалттай зэрэгцээ)
+    # сайн (догол мөр нь функц дуудалттай зэрэгцээ)
     def send_mail(source)
       Mailer.deliver(to: 'bob@example.com',
                      from: 'us@example.com',
@@ -161,24 +161,24 @@ Ruby хэлний код бичих зөвлөмж
     ```Ruby
     arr = [1, 2, 3]
 
-    # буруу
+    # муу
     for elem in arr do
       puts elem
     end
 
-    # зөв
+    # сайн
     arr.each { |elem| puts elem }
     ```
 
 * Олон мөрүүдээс тогтож байгаа `if/unless` нөхцөлүүдийн ард `then` түлхүүр үгийг битгий ашигла
 
     ```Ruby
-    # буруу
+    # муу
     if some_condition then
       # код
     end
 
-    # зөв
+    # сайн
     if some_condition
       # код
     end
@@ -187,10 +187,10 @@ Ruby хэлний код бичих зөвлөмж
 * `if/then/else/end` нөхцөлийн (`?:`) оронд гурвалсан нөхцөл ашигла.
 
     ```Ruby
-    # буруу
+    # муу
     result = if some_condition then something else something_else end
 
-    # зөв
+    # сайн
     result = some_condition ? something : something_else
     ```
 
