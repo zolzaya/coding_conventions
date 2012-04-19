@@ -380,17 +380,17 @@ Ruby хэлний код бичих зөвлөмж
     end
     ```
 
-* Use spaces around the `=` operator when assigning default values to method parameters:
+* Функцын параметруудад заяамал утга оноож өгч байгаа бол `=`-н тэмдэгийн хоёр талд зай ав
 
     ```Ruby
-    # bad
+    # муу
     def some_method(arg1=:default, arg2=nil, arg3=[])
-      # do something...
+      # кодын хэсэг...
     end
 
-    # good
+    # сайн
     def some_method(arg1 = :default, arg2 = nil, arg3 = [])
-      # do something...
+      # кодын хэсэг...
     end
     ```
 
