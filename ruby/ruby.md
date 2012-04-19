@@ -365,15 +365,15 @@ Ruby хэлний код бичих зөвлөмж
     ask themselves - it this code really readable and can't the blocks contents be extracted into
     nifty methods.
 
-* Avoid `return` where not required.
+* Шаардлагагүй тохиолдол `return` түлхүүр үгийг ашиглахаас зайлсхий.
 
     ```Ruby
-    # bad
+    # муу
     def some_method(some_arr)
       return some_arr.size
     end
 
-    # good
+    # сайн
     def some_method(some_arr)
       some_arr.size
     end
