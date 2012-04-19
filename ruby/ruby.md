@@ -393,18 +393,15 @@ Ruby хэлний код бичих зөвлөмж
     end
     ```
 
-    While several Ruby books suggest the first style, the second is much more prominent
-    in practice (and arguably a bit more readable).
-
-* Avoid line continuation (\\) where not required. In practice, avoid using
-  line continuations at all.
+* Шаардлагагүй бол мөр үргэлжлүүлэгч (\\)-г битгий ашигла. Туршлагаас харахад мөр
+үргэлжлүүлэгчийг ашиглахгүй байсан нь дээр байдаг.
 
     ```Ruby
-    # bad
+    # муу
     result = 1 - \
              2
 
-    # good (but still ugly as hell)
+    # сайн (гэхдээ, ашиглах хэрэггүй)
     result = 1 \
              - 2
     ```
@@ -423,21 +420,21 @@ Ruby хэлний код бичих зөвлөмж
     if (v = self.next_value) == "hello" ...
     ```
 
-* Use `||=` freely to initialize variables.
+* Хувьсагчид дахин анхны утга оноохдоо `||=`-г ашигла.
 
     ```Ruby
-    # set name to Bozhidar, only if it's nil or false
+    # Хэрэв нэр нь nil эсвэл false бол уг нэрэнд Bozhidar гэсэн утга онооно
     name ||= 'Bozhidar'
     ```
 
-* Don't use `||=` to initialize boolean variables. (Consider what
-would happen if the current value happened to be `false`.)
+* `||=`-г бүүлэн төрлийн хувьсагчид ашиглаж болохгүй. (Хэрэв хувьсагчийн утга нь `false`
+байвал юу болох бол.)
 
     ```Ruby
-    # bad - would set enabled to true even if it was false
+    # муу - хэрэв false-л байх юм бол true-г онооно
     enabled ||= true
 
-    # good
+    # сайн
     enabled = true if enabled.nil?
     ```
 
@@ -485,13 +482,13 @@ syntax.
     lambda.(1, 2)
     ```
 
-* Use `_` for unused block parameters.
+* Ашиглагдахгүй блокын хувьсагчийн нэрний оронд `_`-г ашигла.
 
     ```Ruby
-    # bad
+    # муу
     result = hash.map { |k, v| v + 1 }
 
-    # good
+    # сайн
     result = hash.map { |_, v| v + 1 }
     ```
 
