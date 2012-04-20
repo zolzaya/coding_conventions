@@ -187,10 +187,10 @@ Ruby хэлний код бичих зөвлөмж
 * `if/then/else/end` нөхцөлийн (`?:`) оронд гурвалсан нөхцөл ашигла.
 
     ```Ruby
-    # буруу
+    # муу
     result = if some_condition then something else something_else end
 
-    # зөв
+    # сайн
     result = some_condition ? something : something_else
     ```
 
@@ -213,10 +213,10 @@ Ruby хэлний код бичих зөвлөмж
 * `if x: ...`-ийг хэзээ ч бүү ашигла, энэ нь Ruby 1.9 дээр дэмжигдэхээ больсон. Оронд нь гурвалсан операторыг ашигла.
 
     ```Ruby
-    # буруу
+    # муу
     result = if some_condition: something else something_else end
 
-    # зөв
+    # сайн
     result = some_condition ? something : something_else
     ```
 
@@ -238,7 +238,7 @@ Ruby хэлний код бичих зөвлөмж
     document.saved? or document.save!
     ```
 
-* Олон мөр `?:` (гурвалсан оператор) ашиглахаас зайлсхий, оронд нь `if/unless`-ийг ашигла.
+* Олон мөр шалгалтанд `?:` (гурвалсан оператор)-г ашиглахаас зайлсхий, оронд нь `if/unless`-ийг ашигла.
 
 * Favor modifier `if/unless` usage when you have a single-line
   body. Өөр нэг сайн бичиглэл бол удирдлагын урсгалын `and/or`-ийг ашиглах явдал юм.
@@ -252,11 +252,11 @@ Ruby хэлний код бичих зөвлөмж
     # сайн
     do_something if some_condition
 
-    # өөр нэг сайн бичиглэл
+    # өөр нэг хувилбар
     some_condition and do_something
     ```
 
-* Сөрөг нөхцөл шалгах үед `if`-ийн оронд `unless`-ийг ашиглах нь тохиромжтой (эсвэл удирдлагын урсгалын `or`-ыг ашиглаарай).
+* Сөрөг нөхцөл шалгах үед `if`-ийн оронд `unless`-ийг ашиглах нь тохиромжтой (эсвэл `or` нөхцлийг ашиглаарай).
 
     ```Ruby
     # муу
@@ -265,21 +265,21 @@ Ruby хэлний код бичих зөвлөмж
     # сайн
     do_something unless some_condition
 
-    # өөр нэг сайн бичиглэл
+    # өөр нэг хувилбар
     some_condition or do_something
     ```
 
 * `unless`-ийг `else`-тэй цуг бүү ашигла. Эерэг тохиолдлыг нь эхэлж шалга.
 
     ```Ruby
-    # буруу
+    # муу
     unless success?
       puts 'failure'
     else
       puts 'success'
     end
 
-    # зөв
+    # сайн
     if success?
       puts 'success'
     else
