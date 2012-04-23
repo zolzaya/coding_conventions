@@ -14,12 +14,12 @@ Ruby хэлний код бичих зөвлөмж
 * Догол мөр бүрт 2 хоосон зай авах
 
     ```Ruby
-    # зөв
+    # сайн
     def some_method
       do_something
     end
 
-    # буруу - 4 хоосон зай
+    # муу - 4 хоосон зай
     def some_method
         do_something
     end
@@ -45,10 +45,10 @@ Ruby хэлний код бичих зөвлөмж
     Дээрх зөвлөмжтэй зөрчилдсөн ганц тохиолдол нь зэрэг дэвшүүлэх үйлдэл дээр хоосон зай ашиглаж болохгүй:
 
     ```Ruby
-    # буруу
+    # муу
     e = M * c ** 2
 
-    # зөв
+    # сайн
     e = M * c**2
     ```
 
@@ -102,12 +102,12 @@ Ruby хэлний код бичих зөвлөмж
 * Функц руу дамжуулж байгаа параметрууд нь хэт их бол параметруудыг догол мөрүүдэд хувааж, функцын дуудалттай зэрэгцүүлнэ.
 
     ```Ruby
-    # буруу (мөр нь хэт урт байна)
+    # муу (мөр нь хэт урт байна)
     def send_mail(source)
       Mailer.deliver(to: 'bob@example.com', from: 'us@example.com', subject: 'Important message', body: source.text)
     end
 
-    # буруу (1 догол мөртэй)
+    # муу (1 догол мөртэй)
     def send_mail(source)
       Mailer.deliver(
         to: 'bob@example.com',
@@ -116,7 +116,7 @@ Ruby хэлний код бичих зөвлөмж
         body: source.text)
     end
 
-    # буруу (2 догол мөртэй)
+    # муу (2 догол мөртэй)
     def send_mail(source)
       Mailer.deliver(
           to: 'bob@example.com',
@@ -125,7 +125,7 @@ Ruby хэлний код бичих зөвлөмж
           body: source.text)
     end
 
-    # зөв (догол мөр нь функц дуудалттай зэрэгцээ)
+    # сайн (догол мөр нь функц дуудалттай зэрэгцээ)
     def send_mail(source)
       Mailer.deliver(to: 'bob@example.com',
                      from: 'us@example.com',
@@ -161,24 +161,24 @@ Ruby хэлний код бичих зөвлөмж
     ```Ruby
     arr = [1, 2, 3]
 
-    # буруу
+    # муу
     for elem in arr do
       puts elem
     end
 
-    # зөв
+    # сайн
     arr.each { |elem| puts elem }
     ```
 
 * Олон мөрүүдээс тогтож байгаа `if/unless` нөхцөлүүдийн ард `then` түлхүүр үгийг битгий ашигла
 
     ```Ruby
-    # буруу
+    # муу
     if some_condition then
       # код
     end
 
-    # зөв
+    # сайн
     if some_condition
       # код
     end
@@ -371,31 +371,30 @@ Ruby хэлний код бичих зөвлөмж
       some_arr.size
     end
     ```
-
-* Функцийн параметрт заяамал утга оноож байгаа үед `=` операторын 2 талд зай авна:
+* Функцын параметруудад заяамал утга оноож байгаа бол тэнцүүгийн тэмдэг (`=`)-н хоёр талд зай авах
 
     ```Ruby
     # муу
     def some_method(arg1=:default, arg2=nil, arg3=[])
-      # ямар нэг юм хийнэ...
+      # кодын хэсэг...
     end
 
     # сайн
     def some_method(arg1 = :default, arg2 = nil, arg3 = [])
-      # ямар нэг юм хийнэ...
+      # кодын хэсэг...
     end
     ```
-
     Зарим Ruby номнуудад эхний хувилбарыг санал болгодог ч 2 дахь хувилбарыг нь практикт илүү дэмждэг (бас илүү уншихад эвтэйхэн).
 
-* Шаардлагагүй үед мөр залгагч (\\)-ийг ашиглахаас зайлсхий. Ер нь практикт мөр залгагчийг бүр ашиглахгүй байсан нь дээр.
+* Шаардлагагүй бол мөр үргэлжлүүлэгч (\\)-г битгий ашигла. Туршлагаас харахад мөр
+үргэлжлүүлэгчийг ашиглахгүй байсан нь дээр байдаг.
 
     ```Ruby
     # муу
     result = 1 - \
              2
 
-    # сайн (гэхдээ л муухай үзэмжгүй хэвээрээ)
+    # сайн (гэхдээ, ашиглах хэрэггүй)
     result = 1 \
              - 2
     ```
@@ -414,21 +413,21 @@ Ruby хэлний код бичих зөвлөмж
     if (v = self.next_value) == "hello" ...
     ```
 
-* Use `||=` freely to initialize variables.
+* Хувьсагчид дахин анхны утга оноохдоо `||=`-г ашигла.
 
     ```Ruby
-    # set name to Bozhidar, only if it's nil or false
+    # Хэрэв нэр нь nil эсвэл false бол уг нэрэнд Bozhidar гэсэн утга онооно
     name ||= 'Bozhidar'
     ```
 
-* Don't use `||=` to initialize boolean variables. (Consider what
-would happen if the current value happened to be `false`.)
+* `||=`-г бүүлэн төрлийн хувьсагчид ашиглаж болохгүй. (Хэрэв хувьсагчийн утга нь `false`
+байвал юу болох бол.)
 
     ```Ruby
-    # bad - would set enabled to true even if it was false
+    # муу - хэрэв false-л байх юм бол true-г онооно
     enabled ||= true
 
-    # good
+    # сайн
     enabled = true if enabled.nil?
     ```
 
@@ -476,13 +475,13 @@ syntax.
     lambda.(1, 2)
     ```
 
-* Use `_` for unused block parameters.
+* Ашиглагдахгүй блокын хувьсагчийн нэрний оронд `_`-г ашигла.
 
     ```Ruby
-    # bad
+    # муу
     result = hash.map { |k, v| v + 1 }
 
-    # good
+    # сайн
     result = hash.map { |_, v| v + 1 }
     ```
 
