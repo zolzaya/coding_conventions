@@ -210,18 +210,15 @@ Ruby хэлний код бичих зөвлөмж
     end
     ```
 
-* Never use `if x: ...` - it is removed in Ruby 1.9. Use
-  the ternary operator instead.
+* `if x: ...`-г хэзээ ч битгий ашигла, оронд нь гурвалсан оператор ашигла. Ruby 1.9-с эхлээд ашиглагдахаа больсон.
 
     ```Ruby
-    # bad
+    # буруу
     result = if some_condition: something else something_else end
 
-    # good
+    # зөв
     result = some_condition ? something : something_else
     ```
-
-* Never use `if x; ...`. Use the ternary operator instead.
 
 * Use `when x then ...` for one-line cases. The alternative syntax
   `when x: ...` is removed in Ruby 1.9.
@@ -233,7 +230,7 @@ Ruby хэлний код бичих зөвлөмж
   wrong operators.)
 
     ```Ruby
-    # boolean expression
+    # булийн нөхцөл
     if some_condition && some_other_condition
       do_something
     end
@@ -248,29 +245,28 @@ Ruby хэлний код бичих зөвлөмж
   body. Another good alternative is the usage of control flow `and/or`.
 
     ```Ruby
-    # bad
+    # буруу
     if some_condition
       do_something
     end
 
-    # good
+    # зөв
     do_something if some_condition
 
     # another good option
     some_condition and do_something
     ```
 
-* Favor `unless` over `if` for negative conditions (or control
-  flow `or`).
+* Сөрөг нөхцөл шалгалтанд `if` оронд `unless`-г ашигла.
 
     ```Ruby
-    # bad
+    # буруу
     do_something if !some_condition
 
-    # good
+    # зөв
     do_something unless some_condition
 
-    # another good option
+    # зөв
     some_condition or do_something
     ```
 
