@@ -187,10 +187,10 @@ Ruby хэлний код бичих зөвлөмж
 * `if/then/else/end` нөхцөлийн (`?:`) оронд гурвалсан нөхцөл ашигла.
 
     ```Ruby
-    # буруу
+    # муу
     result = if some_condition then something else something_else end
 
-    # зөв
+    # сайн
     result = some_condition ? something : something_else
     ```
 
@@ -210,24 +210,21 @@ Ruby хэлний код бичих зөвлөмж
     end
     ```
 
-* `if x: ...`-г хэзээ ч битгий ашигла, оронд нь гурвалсан оператор ашигла. Ruby 1.9-с эхлээд ашиглагдахаа больсон.
+* `if x: ...`-ийг хэзээ ч бүү ашигла, энэ нь Ruby 1.9 дээр дэмжигдэхээ больсон. Оронд нь гурвалсан операторыг ашигла.
 
     ```Ruby
-    # буруу
+    # муу
     result = if some_condition: something else something_else end
 
-    # зөв
+    # сайн
     result = some_condition ? something : something_else
     ```
 
-* Use `when x then ...` for one-line cases. The alternative syntax
-  `when x: ...` is removed in Ruby 1.9.
+* `if x; ...`-ийг хэзээ ч бүү ашигла. Оронд нь гурвалсан операторыг ашигла.
 
-* Never use `when x; ...`. See the previous rule.
+* `when x; ...` үүнийг хэзээ ч бүү ашигла. Өмнөх зөвлөмжийг харна уу.
 
-* Use `&&/||` for boolean expressions, `and/or` for control flow.  (Rule
-  of thumb: If you have to use outer parentheses, you are using the
-  wrong operators.)
+* Булийн илэрхийллийн үед `&&/||`-ийг, удирдлагын урсгалын үед `and/or`-ийг ашигла.  (Практик туршлага: Хэрэв чамд гадуур хаалт хэрэглэх шаардлага гараад байвал чи буруу л оператороо ашиглаад байна даа.)
 
     ```Ruby
     # булийн нөхцөл
@@ -235,52 +232,52 @@ Ruby хэлний код бичих зөвлөмж
       do_something
     end
 
-    # control flow
+    # удирлагын урсгал
     document.saved? or document.save!
     ```
 
-* Avoid multi-line `?:` (the ternary operator), use `if/unless` instead.
+* Олон мөр шалгалтанд `?:` (гурвалсан оператор)-г ашиглахаас зайлсхий, оронд нь `if/unless`-ийг ашигла.
 
 * Favor modifier `if/unless` usage when you have a single-line
-  body. Another good alternative is the usage of control flow `and/or`.
+  body. Өөр нэг сайн бичиглэл бол удирдлагын урсгалын `and/or`-ийг ашиглах явдал юм.
 
     ```Ruby
-    # буруу
+    # муу
     if some_condition
       do_something
     end
 
-    # зөв
+    # сайн
     do_something if some_condition
 
-    # another good option
+    # өөр нэг хувилбар
     some_condition and do_something
     ```
 
-* Сөрөг нөхцөл шалгалтанд `if` оронд `unless`-г ашигла.
+* Сөрөг нөхцөл шалгах үед `if`-ийн оронд `unless`-ийг ашиглах нь тохиромжтой (эсвэл `or` нөхцлийг ашиглаарай).
 
     ```Ruby
-    # буруу
+    # муу
     do_something if !some_condition
 
-    # зөв
+    # сайн
     do_something unless some_condition
 
-    # зөв
+    # өөр нэг хувилбар
     some_condition or do_something
     ```
 
-* Never use `unless` with `else`. Rewrite these with the positive case first.
+* `unless`-ийг `else`-тэй цуг бүү ашигла. Эерэг тохиолдлыг нь эхэлж шалга.
 
     ```Ruby
-    # bad
+    # муу
     unless success?
       puts 'failure'
     else
       puts 'success'
     end
 
-    # good
+    # сайн
     if success?
       puts 'success'
     else
@@ -361,46 +358,44 @@ Ruby хэлний код бичих зөвлөмж
     ask themselves - it this code really readable and can't the blocks contents be extracted into
     nifty methods.
 
-* Avoid `return` where not required.
+* Шаардлагагүй үед `return` ашиглахаас татгалз.
 
     ```Ruby
-    # bad
+    # муу
     def some_method(some_arr)
       return some_arr.size
     end
 
-    # good
+    # сайн
     def some_method(some_arr)
       some_arr.size
     end
     ```
 
-* Use spaces around the `=` operator when assigning default values to method parameters:
+* Функцийн параметрт заяамал утга оноож байгаа үед `=` операторын 2 талд зай авна:
 
     ```Ruby
-    # bad
+    # муу
     def some_method(arg1=:default, arg2=nil, arg3=[])
-      # do something...
+      # ямар нэг юм хийнэ...
     end
 
-    # good
+    # сайн
     def some_method(arg1 = :default, arg2 = nil, arg3 = [])
-      # do something...
+      # ямар нэг юм хийнэ...
     end
     ```
 
-    While several Ruby books suggest the first style, the second is much more prominent
-    in practice (and arguably a bit more readable).
+    Зарим Ruby номнуудад эхний хувилбарыг санал болгодог ч 2 дахь хувилбарыг нь практикт илүү дэмждэг (бас илүү уншихад эвтэйхэн).
 
-* Avoid line continuation (\\) where not required. In practice, avoid using
-  line continuations at all.
+* Шаардлагагүй үед мөр залгагч (\\)-ийг ашиглахаас зайлсхий. Ер нь практикт мөр залгагчийг бүр ашиглахгүй байсан нь дээр.
 
     ```Ruby
-    # bad
+    # муу
     result = 1 - \
              2
 
-    # good (but still ugly as hell)
+    # сайн (гэхдээ л муухай үзэмжгүй хэвээрээ)
     result = 1 \
              - 2
     ```
